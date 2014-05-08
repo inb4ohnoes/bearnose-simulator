@@ -1,7 +1,17 @@
-bearnose-simulator
+Bryson Kagy's Bearnose Collector Simulator 2014
 ==================
 
-Bryson Kagy's Bear-Nose Collector Simulator 2014
-Welcome to the readme. I know it's called a readme but it is really not very important that this file gets read.
-pls make game already !!111 
-i need more bear noses in mah lyfe noaw!!!!!
+This is the repository for Bryson Kagy's Bear-Nose Collector Simulator 2014
+
+Team members are as follows
+
+- Bryson Kagy
+- Alex
+- Brian Tung
+- Sean
+- Sorry I don't know your name
+
+Info
+==================
+
+There's going to be stuff
