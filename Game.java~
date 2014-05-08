@@ -1,0 +1,7 @@
+public class Game
+{
+  public static void main(String args[]) throws IOException
+  {
+    System.out.println("Bearnose Collector Simulator 2014");
+  }
+}
