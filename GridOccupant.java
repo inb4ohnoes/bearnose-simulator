@@ -4,17 +4,14 @@ A GridOccupant occupies the Grid. Dipshit.
 
 public abstract class GridOccupant
 {
-  private int x;
-  private int y;
-  private int[] sector;
+  private Coord coords;
+  private Coord sector;
   
-  public int getX() { return x; }
-  public int getY() { return y; }
-  public int[] getSector() { return sector; }
+  public Coord getCoords() { return coords; }
+  public Coord getSector() { return sector; }
   public abstract int getSize();
   
-  public void setX(int setTo) { x = setTo; }
-  public void setY(int setTo) { y = setTo; }
+  public void goTo(int x, int y) { coords = new Coord(x,y); }
   
   //Puts the occupant into a Grid
   public void putSelfInGrid(Grid gr)
@@ -24,6 +21,6 @@ public abstract class GridOccupant
   
   //Returns whether a given point is within the
   //bounds of the object
-  public abstract boolean isWithin(int x, int y);
+  public abstract boolean isWithin(Coord input);
   
 }
