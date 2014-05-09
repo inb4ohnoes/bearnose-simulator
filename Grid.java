@@ -78,6 +78,13 @@ public class Grid
     }
   }
   
+  //Refreshes the Grid so that if any occupants have moved,
+  //they will be placed in the proper sectors
+  public void refresh()
+  {
+    resizeSectors(sectorSize);
+  }
+  
   //Returns the occupants of a given sector of the Grid
   @SuppressWarnings("unchecked")
   public ArrayList<GridOccupant> getSector(int x, int y)
