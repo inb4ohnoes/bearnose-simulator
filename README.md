@@ -14,4 +14,4 @@ Team members are as follows
 Info
 ==================
 
-There's going to be stuff
+"pls make game already !!111 i need more bear noses in mah lyfe noaw!!!!!" -Bryson Kagy, 2014

@@ -19,7 +19,7 @@ public class Grid
   {
     width = wIn;
     height = hIn;
-    if (width >= height)
+    if (width <= height)
       sectorSize = width / 8;
     else
       sectorSize = height / 8;
@@ -39,7 +39,7 @@ public class Grid
   
   //Adds an occupant to the Grid
   @SuppressWarnings("unchecked")
-  public Coord add(GridOccupant occ)
+  public void add(GridOccupant occ)
   {
     if (occ == null)
       throw new NullPointerException();
@@ -52,7 +52,7 @@ public class Grid
       grid[placeAt[0]][placeAt[1]] = new ArrayList<GridOccupant>();
     ((ArrayList<GridOccupant>) grid[placeAt[0]][placeAt[1]]).add(occ);
     allOccupants.add(occ);
-    return sectorOf(occ.getCoords());
+    occ.setSector(sectorOf(occ.getCoords()));
   }
   
   //Returns the coordinates of the sector in
@@ -60,6 +60,15 @@ public class Grid
   public Coord sectorOf(Coord input)
   {
     return new Coord(input.getX() / sectorSize, input.getY() / sectorSize);
+  }
+  
+  //Returns whether or not a given Coord is contained
+  //within this Grid
+  public boolean isValid(Coord input)
+  {
+    System.out.println(new Coord(width,height));
+    return input.isSEOf(new Coord(0,0)) &&
+      input.isNWOf(new Coord(width,height));
   }
   
   //Resizes the Grid to have a new sector size
@@ -75,6 +84,7 @@ public class Grid
     if (grid[placeAt[0]][placeAt[1]] == null)
       grid[placeAt[0]][placeAt[1]] = new ArrayList<GridOccupant>();
     ((ArrayList<GridOccupant>) grid[placeAt[0]][placeAt[1]]).add(occ);
+    occ.setSector(sectorOf(occ.getCoords()));
     }
   }
   
@@ -95,6 +105,11 @@ public class Grid
   public ArrayList<GridOccupant> getSector(int[] coords)
   {
     return (ArrayList<GridOccupant>)grid[coords[0]][coords[1]];
+  }
+  
+  public ArrayList<GridOccupant> getOccupants()
+  {
+    return allOccupants;
   }
   
 }
