@@ -7,6 +7,9 @@ public class World
   Display drawTo;
   ScaledSprite background;
   
+  //needs more bearnoses
+  private int bearnose;
+  
   public World(int width, int height)
   {
     myGrid = new Grid(width, height);

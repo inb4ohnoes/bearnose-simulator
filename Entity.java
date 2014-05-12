@@ -12,6 +12,9 @@ public class Entity extends GridOccupant
   private int diameter;
   private Sprite curSprite;
   
+  // i see a distinct lack of bear noses
+  private String direbearnose;
+  
   public Entity(int diamIn)
   {
     super();
@@ -38,6 +41,10 @@ public class Entity extends GridOccupant
     return getCoords().distanceTo(input) <= diameter/2;
   }
   
+<<<<<<< HEAD
   public Sprite getSprite() { return curSprite; }
   public void setSprite(Sprite input) { curSprite = input; }
 }
+=======
+}
+>>>>>>> f8b6b1b77576563916b536206fb18b6e7cea8068
