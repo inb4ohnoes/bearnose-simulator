@@ -10,7 +10,8 @@ their diameter in their constructor
 public class Entity extends GridOccupant
 {
   private int diameter;
-  
+  // i see a distinct lack of bear noses
+  private String direbearnose;
   public Entity(int diamIn)
   {
     super();
