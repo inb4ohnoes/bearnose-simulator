@@ -2,9 +2,14 @@ public class Game
 {
   public static void main(String args[])
   {
+    Display display = new Display(600,400);
+    display.draw("bear_sprite.png.jpeg.tiff.png",50,50);
+    display.draw("bear_sprite.png.jpeg.tiff.png",100,100);
+    
     System.out.println("Bearnose Collector Simulator 2014!!!!!!!!!!111111");
     World aWholeNewWorld = new World(128,128);
     Entity someDude = new Entity(3);
+    
     
     aWholeNewWorld.add(someDude,4,7);
     
@@ -12,10 +17,10 @@ public class Game
     System.out.println(someDude.getCoords().plus(new Coord (4,0)));
     System.out.println(someDude.getCoords().isSEOf(new Coord(0,0)));*/
     
-    while(!someDude.getCoords().equals(124,7))
+    /*while(!someDude.getCoords().equals(124,7))
     {
       aWholeNewWorld.tick();
       System.out.print(aWholeNewWorld);
-    }
+    }*/
   }
 }
