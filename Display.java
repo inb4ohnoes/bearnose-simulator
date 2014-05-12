@@ -33,7 +33,19 @@ public class Display extends JFrame
     }
     catch (IOException ie)
     {
-      System.out.print("din work");
+      System.out.print(ie);
+    }
+  }
+  public void draw(String fileName, Coord at)
+  {
+    try
+    {
+      BufferedImage img = ImageIO.read(new File(fileName));
+      getGraphics().drawImage(img,at.getX(),at.getY(),null); 
+    }
+    catch (IOException ie)
+    {
+      System.out.print(ie);
     }
   }
   
