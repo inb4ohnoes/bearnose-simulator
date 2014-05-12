@@ -4,28 +4,34 @@ import javax.imageio.ImageIO;
 
 public class Sprite
 {
-  private BufferedImage myImage;
+  private String fileName;
+  private int layer;
   
-  public Sprite(String fileName)
+  public Sprite(String fn)
   {
-    setImage(fileName);
+    fileName = fn;
+    layer = 0;
   }
   
   public BufferedImage getImage()
   {
-    return myImage;
-  }
-  
-  public void setImage(String fileName)
-  {
     try
     {
-      myImage = ImageIO.read(new File(fileName));
+      return ImageIO.read(new File(fileName));
     }
     catch (IOException ie)
     {
       System.out.println(ie);
+      return null;
     }
   }
+  
+  public String getFileName() { return fileName; }
+  public void setFileName(String input) { fileName = input; }
+  
+  public int getLayer() { return layer; }
+  
+  public int getWidth() { return getImage().getWidth(); }
+  public int getHeight() { return getImage().getHeight(); }
   
 }

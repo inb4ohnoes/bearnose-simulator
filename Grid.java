@@ -37,6 +37,9 @@ public class Grid
     allOccupants = new ArrayList<GridOccupant>();
   }
   
+  public int getWidth() { return width; }
+  public int getHeight() { return height; }
+  
   //Adds an occupant to the Grid
   @SuppressWarnings("unchecked")
   public void add(GridOccupant occ)

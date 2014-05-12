@@ -7,13 +7,17 @@ import javax.swing.JFrame;
 
 public class Display extends JFrame
 {
-  JFrame frame;
+  int width;
+  int height;
   
-  public Display(int width, int height)
+  public Display(int widthIn, int heightIn)
   {
     super("bearnose-simulator");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    width = widthIn;
+    height = heightIn;
+    
     setPreferredSize(new Dimension(width, height));
     //setResizable(false);
     
@@ -47,6 +51,22 @@ public class Display extends JFrame
     {
       System.out.print(ie);
     }
+  }
+  
+  public void draw(Sprite spr, int x, int y)
+  {
+    BufferedImage img = spr.getImage();
+    getGraphics().drawImage(img,x,y,null); 
+  }
+  public void draw(Sprite spr, Coord at)
+  {
+    BufferedImage img = spr.getImage();
+    getGraphics().drawImage(img,at.getX(),at.getY(),null); 
+  }
+  
+  public void clear()
+  {
+    getGraphics().fillRect(0, 0, width, height);
   }
   
 }
