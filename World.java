@@ -3,7 +3,8 @@ import java.util.*;
 public class World
 {
   Grid myGrid;
-  
+  //needs more bearnoses
+  private int bearnose;
   public World(int width, int height)
   {
     myGrid = new Grid(width, height);
