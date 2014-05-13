@@ -31,7 +31,7 @@ public class World
   public void tick()
   {
     if (drawTo != null)
-      drawTo.clear();
+      drawTo.draw(background,0,0);
     for (GridOccupant occ : myGrid.getOccupants())
     {
       if (occ instanceof Entity)

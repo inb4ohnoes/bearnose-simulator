@@ -5,7 +5,7 @@ public class Game
     Display display = new Display(600,400);
     
     System.out.println("Bearnose Collector Simulator 2014!!!!!!!!!!111111");
-    World aWholeNewWorld = new World(600,400);
+    World aWholeNewWorld = new World(600,400,"Koala.jpg");
     aWholeNewWorld.setDisplay(display);
     
     
@@ -14,7 +14,7 @@ public class Game
     while(true)
     {
       aWholeNewWorld.tick();
-      System.out.print(aWholeNewWorld);
+      //System.out.print(aWholeNewWorld);
     }
   }
 }

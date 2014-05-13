@@ -19,7 +19,7 @@ public class Entity extends GridOccupant
   {
     super();
     diameter = diamIn;
-    curSprite = new ScaledSprite("bear_sprite.png.jpeg.tiff.png", .5, .5);
+    curSprite = new Sprite("bear_sprite.png.jpeg.tiff.png");
   }
   
   //The method where you put all the shit that the Entity does
@@ -41,10 +41,6 @@ public class Entity extends GridOccupant
     return getCoords().distanceTo(input) <= diameter/2;
   }
   
-<<<<<<< HEAD
   public Sprite getSprite() { return curSprite; }
   public void setSprite(Sprite input) { curSprite = input; }
 }
-=======
-}
->>>>>>> f8b6b1b77576563916b536206fb18b6e7cea8068

@@ -69,7 +69,6 @@ public class Grid
   //within this Grid
   public boolean isValid(Coord input)
   {
-    System.out.println(new Coord(width,height));
     return input.isSEOf(new Coord(0,0)) &&
       input.isNWOf(new Coord(width,height));
   }
