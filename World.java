@@ -30,13 +30,18 @@ public class World
   
   public void tick()
   {
-    if (drawTo != null)
-      drawTo.draw(background,0,0);
     for (GridOccupant occ : myGrid.getOccupants())
     {
       if (occ instanceof Entity)
-      {
         ((Entity)occ).step();
+      myGrid.refresh();
+    }
+    
+    if (drawTo != null)
+    {
+      drawTo.draw(background,0,0);
+      for (GridOccupant occ : myGrid.getOccupants())
+      {
         Sprite toDraw = ((Entity)occ).getSprite();
         if (!(toDraw == null || drawTo == null))
         {
@@ -44,9 +49,7 @@ public class World
           drawTo.draw(toDraw, occ.getCoords().getX() - image.getWidth()/2, occ.getCoords().getY() - image.getHeight()/2);
         }
       }
-      myGrid.refresh();
     }
-
   }
   
   public void add(GridOccupant occ)

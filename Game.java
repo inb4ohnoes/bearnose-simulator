@@ -9,7 +9,7 @@ public class Game
     aWholeNewWorld.setDisplay(display);
     
     
-    aWholeNewWorld.add(new Entity(3),35,100);
+    aWholeNewWorld.add(new NPC(200),35,100);
     
     while(true)
     {

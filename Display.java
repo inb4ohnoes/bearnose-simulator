@@ -19,7 +19,7 @@ public class Display extends JFrame
     height = heightIn;
     
     setPreferredSize(new Dimension(width, height));
-    //setResizable(false);
+    setResizable(false);
     
     setLayout(null);
     
@@ -56,7 +56,7 @@ public class Display extends JFrame
   public void draw(Sprite spr, int x, int y)
   {
     BufferedImage img = spr.getImage();
-    getGraphics().drawImage(img,x,y,null); 
+    getGraphics().drawImage(img,x,y,null);
   }
   public void draw(Sprite spr, Coord at)
   {
@@ -64,9 +64,9 @@ public class Display extends JFrame
     getGraphics().drawImage(img,at.getX(),at.getY(),null); 
   }
   
-  public void clear()
+  public void clear(Graphics g)
   {
-    getGraphics().fillRect(0, 0, width, height);
+    g.fillRect(0, 0, width, height);
   }
   
 }
