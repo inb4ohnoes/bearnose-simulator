@@ -10,6 +10,7 @@ public class Game
     
     
     aWholeNewWorld.add(new NPC(200),35,100);
+    aWholeNewWorld.add(new NPC(200),10,245);
     
     while(true)
     {

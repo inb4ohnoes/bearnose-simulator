@@ -3,6 +3,8 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
 
 
 public class Display extends JFrame
@@ -26,6 +28,10 @@ public class Display extends JFrame
     pack();
     setLocationRelativeTo(null);
     setVisible(true);
+    
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    ge.getAllFonts();
+    
   }
   
   public void draw(String fileName, int x, int y)
@@ -42,15 +48,7 @@ public class Display extends JFrame
   }
   public void draw(String fileName, Coord at)
   {
-    try
-    {
-      BufferedImage img = ImageIO.read(new File(fileName));
-      getGraphics().drawImage(img,at.getX(),at.getY(),null); 
-    }
-    catch (IOException ie)
-    {
-      System.out.print(ie);
-    }
+      draw(fileName,at.getX(),at.getY()); 
   }
   
   public void draw(Sprite spr, int x, int y)
@@ -60,8 +58,15 @@ public class Display extends JFrame
   }
   public void draw(Sprite spr, Coord at)
   {
-    BufferedImage img = spr.getImage();
-    getGraphics().drawImage(img,at.getX(),at.getY(),null); 
+    draw(spr,at.getX(),at.getY()); 
+  }
+  
+  public void drawText(String text)
+  {
+    getGraphics().setFont( new Font("Verdana", Font.PLAIN , 64) );
+    if (getGraphics().getFont().equals(new Font("Verdana", Font.PLAIN , 64)))
+      getGraphics().drawString("DAFUQ?",50,50);
+    getGraphics().drawString(text,30,30);
   }
   
   public void clear(Graphics g)
