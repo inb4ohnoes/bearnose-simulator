@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 
+import java.util.*;
+
 
 public class Display extends JFrame
 {
@@ -61,12 +63,52 @@ public class Display extends JFrame
     draw(spr,at.getX(),at.getY()); 
   }
   
-  public void drawText(String text)
+  public String drawText(String text, int boxHeight)
   {
-    getGraphics().setFont( new Font("Verdana", Font.PLAIN , 64) );
-    if (getGraphics().getFont().equals(new Font("Verdana", Font.PLAIN , 64)))
-      getGraphics().drawString("DAFUQ?",50,50);
-    getGraphics().drawString(text,30,30);
+    Graphics g = getGraphics();
+    Font f = new Font("Verdana", Font.PLAIN , 32);
+    FontMetrics fm = new FontMetrics(f) {};
+    
+    g.setFont(f);
+    int textHeight = fm.getHeight();
+    
+    ArrayList<String> lines = new ArrayList<String>();
+    int curLineSize = 0;
+    int beginning = 0;
+    
+    for(int x = 0; x < text.length(); x++)
+    {
+      if (curLineSize + fm.charWidth(text.charAt(x)) <  getWidth())
+      {
+        curLineSize += fm.charWidth(text.charAt(x));
+        if (x == text.length()-1)
+        {
+          lines.add(text.substring(beginning,x));
+        }
+      }
+      else
+      {
+        lines.add(text.substring(beginning,x));
+        beginning = x;
+        curLineSize = 0;
+      }
+    }
+    
+    for(int y = 0; y < boxHeight; y++)
+    {
+      g.drawString("" + lines.get(y), 0, getHeight() - (boxHeight - y) * fm.getHeight());
+    }
+    
+    if(lines.size() <= boxHeight)
+      return "";
+    else
+    {
+      String toReturn = "";
+      for (int z = boxHeight; z < lines.size(); z++)
+        toReturn += lines.get(z);
+      return toReturn;
+    }
+    
   }
   
   public void clear(Graphics g)

@@ -49,7 +49,7 @@ public class World
           drawTo.draw(toDraw, occ.getCoords().getX() - image.getWidth()/2, occ.getCoords().getY() - image.getHeight()/2);
         }
       }
-      drawTo.drawText("FGHGDUIHGFDIGHJ");
+      drawTo.drawText("HFHFBFDJFHFHGIDBFHFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",3);
     }
   }
   
